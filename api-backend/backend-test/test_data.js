@@ -1,0 +1,123 @@
+var newQ = {
+"questionnaireID": "QQ002", 
+"questionnaireTitle": "My second research questionnaire",
+"keywords": [
+"screen",
+"glasses", 
+"cable"
+], 
+"questions": [
+{
+"qID": "Q0", 
+"qtext": "How long is your screen s diagonal (Answer in inches)?",
+"required": "TRUE",
+"type": "question",
+"options": [
+{
+"optID": "Q0A1",
+"opttxt": "<=16",
+"nextqID": "Q2"
+},
+{
+"optID": "Q0A2",
+"opttxt": ">16 and <=24",
+"nextqID": "Q1"
+},
+{
+"optID": "Q0A3",
+"opttxt": ">24",
+"nextqID": "Q2"
+}
+] 
+},
+{
+"qID": "Q1",
+"qtext": "Do you use laptop or desktop?",
+"required": "TRUE",
+"type": "question",
+"options": [
+{
+"optID": "Q1A1",
+"opttxt": "Laptop",
+"nextqID": "Q2"
+},
+{
+"optID": "Q1A2",
+"opttxt": "Desktop",
+"nextqID": "Q2"					
+}
+]
+},
+{
+"qID": "Q2",
+"qtext": "Do you wear glasses?",
+"required": "TRUE",
+"type": "question",
+"options": [
+{
+"optID": "Q2A1",
+"opttxt": "Yes",
+"nextqID": "Q3"
+},
+{
+"optID": "Q2A2",
+"opttxt": "No",
+"nextqID": "Q4"					
+}
+]
+},
+{
+"qID": "Q3",
+"qtext": "Why?",
+"required": "TRUE",
+"type": "question",
+"options": [
+{
+"optID": "Q3A1",
+"opttxt": "Myopia",
+"nextqID": "Q4"
+},
+{
+"optID": "Q3A2",
+"opttxt": "Presbyopia",
+"nextqID": "Q4"					
+},
+{
+"optID": "Q3A3",
+"opttxt": "Other reason",
+"nextqID": "Q4"
+}
+]
+},
+{
+"qID": "Q4",
+"qtext": "Which type of cable do you use to connect your screen with your PC?",
+"required": "TRUE",
+"type": "question",
+"options": [
+{
+"optID": "Q4A1",
+"opttxt": "HDMI to HDMI",
+"nextqID": "-"
+},
+{
+"optID": "Q4A2",
+"opttxt": "DisplayPort to DistplayPort",
+"nextqID": "-"	
+},
+{
+"optID": "Q4A3",
+"opttxt": "VGA to VGA",
+"nextqID": "-"
+},
+{
+"optID": "Q4A4",
+"opttxt": "Other",
+"nextqID": "-"	
+}
+]
+}
+]
+}
+
+module.exports = newQ;

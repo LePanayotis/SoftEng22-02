@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>intelliQ Home</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <script
+        src="https://app.enzuzo.com/apps/enzuzo/static/js/__enzuzo-cookiebar.js?uuid=a1b7e20c-ad6b-11ed-994c-9f2722081efe"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo03"
+            aria-controls="navbarTogglerDemo03" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <a class="navbar-brand" href="#">intelliQ</a>
+
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo03">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active">
+                    <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/about">About Us</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" id="give_token" action="/questionnaire" method="get">
+                <input class="form-control mr-sm-2" type="search" placeholder="Questionnaire Token"
+                    aria-label="Questionnaire Token" id="id" name="id" required>
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Answer to Questionnaire</button>
+            </form>
+        </div>
+    </nav>
+
+    <div class="main">
+
+        <div class="window">
+            <form action="/login" method="post">
+                <h1>intelliQ</h1>
+                <h5>Admin access</h5>
+                <br>
+                <input class="form-control mr-sm-2" name="username" style="width: max-content;" placeholder="user name"
+                    required>
+                <br>
+                <input class="form-control mr-sm-2" type="password" style="width: max-content;" name="password"
+                    placeholder="password" required>
+                <br>
+                <button class="btn btn-outline-success my-2 my-sm-0" style="width: max-content;">Login</button>
+
+            </form>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <style>
+        html {
+            height: 100%;
+        }
+
+        body {
+            background-image: linear-gradient(135deg, #FAB2FF 10%, #1904E5 100%);
+            min-height: 100%;
+        }
+
+        .main {
+            padding: 8%;
+            font-family: "Open Sans", sans-serif;
+            color: #333333;
+            align-items: center;
+            justify-content: center;
+            width: auto;
+            display: flex;
+
+        }
+
+        .window {
+            padding: 30px;
+            width: 25%;
+            min-height: 25%;
+            background-color: floralwhite;
+            border-radius: 15px;
+            box-shadow: 10px 10px 5px rgba(128, 128, 128, 0.548);
+        }
+    </style>
+</body>
+
+</html>

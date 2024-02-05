@@ -1,0 +1,1886 @@
+{
+	"info": {
+		"_postman_id": "29c2f030-c9f9-46f9-9435-3ff8c97121e9",
+		"name": "Backend documentation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25679740"
+	},
+	"item": [
+		{
+			"name": "Admin",
+			"item": [
+				{
+					"name": "Healthcheck",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/healthcheck",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"healthcheck"
+							]
+						},
+						"description": "This endpoint informs the client of the status of connection of the server to the database"
+					},
+					"response": [
+						{
+							"name": "Connection Successful",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/healthcheck",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"healthcheck"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "108"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"6c-oQWbWAcNXNH7U6RyoFIc/XDvBrI\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 11:22:34 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\",\n    \"dbconnection\": \"host: 'localhost', user: 'root', password: 'vaseis23', database: 'IntelliQ'\"\n}"
+						},
+						{
+							"name": "Connection Failed",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/healthcheck",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"healthcheck"
+									]
+								}
+							},
+							"status": "Internal Server Error",
+							"code": 500,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "112"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"70-Kvt8XXnPUlrdtPAlCwZ5U9kbIvU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 11:24:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"failed\",\n    \"dbconnection\": \"host: 'localhost', user: 'root', password: 'vaseis23', database: 'IntelliQ'\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Questionnaire Update",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/questionnaire_upd",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"questionnaire_upd"
+							]
+						},
+						"description": "Adds new questionnaire to the database"
+					},
+					"response": [
+						{
+							"name": "Questionnaire Update",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\",\n    \"username\": \"abullockt\",\n    \"questionnaireID\": \"3\",\n    \"questionnaireTitle\": \"My first research questionnaire\",\n    \"keywords\": [\n        \"footbal\",\n        \"islands\",\n        \"timezone\"\n    ],\n    \"questions\": [\n        {\n            \"qID\": \"P00\",\n            \"qtext\": \"Ποιο είναι το mail σας;\",\n            \"required\": \"FALSE\",\n            \"type\": \"profile\",\n            \"options\": [\n                {\n                    \"optID\": \"P00TXT\",\n                    \"opttxt\": \"<open string>\",\n                    \"nextqID\": \"P01\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"P01\",\n            \"qtext\": \"Ποια είναι η ηλικία σας;\",\n            \"required\": \"TRUE\",\n            \"type\": \"profile\",\n            \"options\": [\n                {\n                    \"optID\": \"P01A1\",\n                    \"opttxt\": \"<30\",\n                    \"nextqID\": \"Q01\"\n                },\n                {\n                    \"optID\": \"P01A2\",\n                    \"opttxt\": \"30-50\",\n                    \"nextqID\": \"Q01\"\n                },\n                {\n                    \"optID\": \"P01A3\",\n                    \"opttxt\": \"50-70\",\n                    \"nextqID\": \"Q01\"\n                },\n                {\n                    \"optID\": \"P01A4\",\n                    \"opttxt\": \">70\",\n                    \"nextqID\": \"Q01\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q01\",\n            \"qtext\": \"Ποιο είναι το αγαπημένο σας χρώμα;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q01A1\",\n                    \"opttxt\": \"Πράσινο\",\n                    \"nextqID\": \"Q02\"\n                },\n                {\n                    \"optID\": \"Q01A2\",\n                    \"opttxt\": \"Κόκκινο\",\n                    \"nextqID\": \"Q02\"\n                },\n                {\n                    \"optID\": \"Q01A3\",\n                    \"opttxt\": \"Κίτρινο\",\n                    \"nextqID\": \"Q02\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q02\",\n            \"qtext\": \"Ασχολείστε με το ποδόσφαιρο;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q02A1\",\n                    \"opttxt\": \"Ναι\",\n                    \"nextqID\": \"Q03\"\n                },\n                {\n                    \"optID\": \"Q02A2\",\n                    \"opttxt\": \"Οχι\",\n                    \"nextqID\": \"Q04\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q03\",\n            \"qtext\": \"Τι ομάδα είστε;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q03A1\",\n                    \"opttxt\": \"Παναθηναϊκός\",\n                    \"nextqID\": \"Q04\"\n                },\n                {\n                    \"optID\": \"Q03A2\",\n                    \"opttxt\": \"Ολυμπιακός \",\n                    \"nextqID\": \"Q04\"\n                },\n                {\n                    \"optID\": \"Q03A3\",\n                    \"opttxt\": \"ΑΕΚ\",\n                    \"nextqID\": \"Q04\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q04\",\n            \"qtext\": \"Έχετε ζήσει σε νησί;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q04A1\",\n                    \"opttxt\": \"Ναι\",\n                    \"nextqID\": \"Q05\"\n                },\n                {\n                    \"optID\": \"Q04A2\",\n                    \"opttxt\": \"Οχι\",\n                    \"nextqID\": \"Q06\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q05\",\n            \"qtext\": \"Με δεδομένο ότι απαντήσατε [*Q04A1] στην ερώτηση [*Q04]: Ποια η σχέση σας με το θαλάσσιο σκι;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q05A1\",\n                    \"opttxt\": \"Καμία\",\n                    \"nextqID\": \"Q07\"\n                },\n                {\n                    \"optID\": \"Q05A2\",\n                    \"opttxt\": \"Μικρή\",\n                    \"nextqID\": \"Q07\"\n                },\n                {\n                    \"optID\": \"Q05A3\",\n                    \"opttxt\": \"Μεγάλη\",\n                    \"nextqID\": \"Q07\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q06\",\n            \"qtext\": \"Είστε χειμερινός κολυμβητής\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q06A1\",\n                    \"opttxt\": \"Ναι\",\n                    \"nextqID\": \"Q07\"\n                },\n                {\n                    \"optID\": \"Q06A2\",\n                    \"opttxt\": \"Οχι\",\n                    \"nextqID\": \"Q07\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q07\",\n            \"qtext\": \"Κάνετε χειμερινό σκι;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q07A1\",\n                    \"opttxt\": \"Σπάνια - καθόλου\",\n                    \"nextqID\": \"Q08\"\n                },\n                {\n                    \"optID\": \"Q07A2\",\n                    \"opttxt\": \"Περιστασιακά\",\n                    \"nextqID\": \"Q08\"\n                },\n                {\n                    \"optID\": \"Q07A3\",\n                    \"opttxt\": \"Τακτικά\",\n                    \"nextqID\": \"Q08\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q08\",\n            \"qtext\": \"Συμφωνείτε να αλλάζει η ώρα κάθε χρόνο;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q08A1\",\n                    \"opttxt\": \"Ναι\",\n                    \"nextqID\": \"Q09\"\n                },\n                {\n                    \"optID\": \"Q08A2\",\n                    \"opttxt\": \"Οχι\",\n                    \"nextqID\": \"-\"\n                }\n            ]\n        },\n        {\n            \"qID\": \"Q09\",\n            \"qtext\": \"Με δεδομένο ότι απαντήσατε [*Q08A2] στην ερώτηση [*Q08]: Προτιμάτε τη θερινή ή την χειμερινή ώρα;\",\n            \"required\": \"TRUE\",\n            \"type\": \"question\",\n            \"options\": [\n                {\n                    \"optID\": \"Q09A1\",\n                    \"opttxt\": \"Θερινή\",\n                    \"nextqID\": \"-\"\n                },\n                {\n                    \"optID\": \"Q09A2\",\n                    \"opttxt\": \"Χειμερινή\",\n                    \"nextqID\": \"-\"\n                }\n            ]\n        }\n    ]\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/questionnaire_upd",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"questionnaire_upd"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "32"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"20-azfKRVRPYkexCflUtZPSdpcmAxU\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 11:35:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Questionnaire added\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Resetall",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/resetall",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"resetall"
+							]
+						},
+						"description": "An API endpoint to delete everything from the database"
+					},
+					"response": [
+						{
+							"name": "Reset Successful",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/resetall",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"resetall"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f-v/Y1JusChTxrQUzPtNAKycooOTA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 11:38:08 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Reset Questionnaire Answers",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzI0MzAxLCJleHAiOjE2NzY3Mjc5MDF9.qU5X0JD7D9PQ3jef8gqTxcf_QZqpOBt35TPjKPn2SlM\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/resetq/:questionnaireID",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"resetq",
+								":questionnaireID"
+							],
+							"variable": [
+								{
+									"key": "questionnaireID",
+									"value": null
+								}
+							]
+						},
+						"description": "API endpoint for deleting all answers from a questionnaire"
+					},
+					"response": [
+						{
+							"name": "Answer reset",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzI0MzAxLCJleHAiOjE2NzY3Mjc5MDF9.qU5X0JD7D9PQ3jef8gqTxcf_QZqpOBt35TPjKPn2SlM\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/resetq/0000",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"resetq",
+										"0000"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "15"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"f-v/Y1JusChTxrQUzPtNAKycooOTA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 12:45:15 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"OK\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User check",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/usermod_check/:username",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"usermod_check",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": null
+								}
+							]
+						},
+						"description": "API endpoint that checks if a particular admin exists"
+					},
+					"response": [
+						{
+							"name": "User exists",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/usermod_check/geo123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"usermod_check",
+										"geo123"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "24"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"18-zbMlZfbqEU4SugmuxP+Cj4oBFs4\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 11:50:42 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"User exists\"\n}"
+						},
+						{
+							"name": "User does not exist",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/usermod_check/test",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"usermod_check",
+										"test"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "25"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"19-wjmJ2cQuubZZuOw+WtT1IWoSVNQ\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 11:51:44 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"No such user\"\n}"
+						}
+					]
+				},
+				{
+					"name": "Change password",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/usermod/:username/:password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"usermod",
+								":username",
+								":password"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": null
+								},
+								{
+									"key": "password",
+									"value": null
+								}
+							]
+						},
+						"description": "API that changes user password or adds new user"
+					},
+					"response": [
+						{
+							"name": "Change password",
+							"originalRequest": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"first_name\": \"George\",\n    \"last_name\": \"Triantafyllis\",\n    \"email\": \"trianta@usgs.gov\",\n    \"birth_date\": \"2022-07-14\",\n    \"old_passw\": \"12345\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/usermod/geo123/98765",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"usermod",
+										"geo123",
+										"98765"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "29"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"1d-2f7N9xwRu2yahiuaXx44eLbRspM\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 12:03:52 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"status\": \"Password Changed\"\n}"
+						}
+					]
+				},
+				{
+					"name": "User Info",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/admin/users/:username",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"admin",
+								"users",
+								":username"
+							],
+							"variable": [
+								{
+									"key": "username",
+									"value": null
+								}
+							]
+						},
+						"description": "An API that returns user info"
+					},
+					"response": [
+						{
+							"name": "Authorised search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/users/pan123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"users",
+										"pan123"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "139"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"8b-3K6O8g/LW+I0Fa4ALKWVNVpx5NA\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 12:06:03 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"username\": \"pan123\",\n    \"first_name\": \"Panagiotis\",\n    \"last_name\": \"Papagianakis\",\n    \"email\": \"pan@ugmail.gov\",\n    \"birth_date\": \"2022-07-13T21:00:00.000Z\"\n}"
+						},
+						{
+							"name": "Unauthorised Search",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n     \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.yJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9103/intelliq_api/admin/users/pan123",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9103",
+									"path": [
+										"intelliq_api",
+										"admin",
+										"users",
+										"pan123"
+									]
+								}
+							},
+							"status": "Unauthorized",
+							"code": 401,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "X-Powered-By",
+									"value": "Express"
+								},
+								{
+									"key": "Access-Control-Allow-Origin",
+									"value": "*"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/json; charset=utf-8"
+								},
+								{
+									"key": "Content-Length",
+									"value": "35"
+								},
+								{
+									"key": "ETag",
+									"value": "W/\"23-DVMQ546iZrEXhC6RbqZME5F/Z+0\""
+								},
+								{
+									"key": "Date",
+									"value": "Sat, 18 Feb 2023 12:07:00 GMT"
+								},
+								{
+									"key": "Connection",
+									"value": "keep-alive"
+								},
+								{
+									"key": "Keep-Alive",
+									"value": "timeout=5"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"message\": \"Authentication failed\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"username\": \"abullockt\",\n    \"password\": \"LJE5SC0M3VP\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:9103/intelliq_api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9103",
+					"path": [
+						"intelliq_api",
+						"login"
+					]
+				},
+				"description": "Log in is performed by this API"
+			},
+			"response": [
+				{
+					"name": "Successful Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"abullockt\",\n    \"password\": \"LJE5SC0M3VP\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"login"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "165"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"a5-cRcbviRA6w51sppvs6EcgBcRMYg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 10:33:47 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzE2NDI3LCJleHAiOjE2NzY3MjAwMjd9.rpHqFgPCTvbVEmlGI238M9U_56xOBbIeb5Y_IsRl8-g\"\n}"
+				},
+				{
+					"name": "Failed Login",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"abullockt\",\n    \"password\": \"LJE5SC0M3V\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/login",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"login"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "27"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"1b-iYKcc7rwjr95JeYUjbxkROXdloI\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 10:34:01 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"status\": \"Not authorized\"\n}"
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9103/intelliq_api/logout",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9103",
+					"path": [
+						"intelliq_api",
+						"logout"
+					]
+				},
+				"description": "This API performs the logout"
+			},
+			"response": [
+				{
+					"name": "Logout",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/logout",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"logout"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "46"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"2e-VYT5tB0azW8X5XXJgcCpGE9v2o4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 10:27:44 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"You have successfully logged out\"\n}"
+				}
+			]
+		},
+		{
+			"name": "doanswer",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9103/intelliq_api/doanswer//:questionnaireID/:questionID/:session/:optionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9103",
+					"path": [
+						"intelliq_api",
+						"doanswer",
+						"",
+						":questionnaireID",
+						":questionID",
+						":session",
+						":optionID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": null
+						},
+						{
+							"key": "questionID",
+							"value": null
+						},
+						{
+							"key": "session",
+							"value": null
+						},
+						{
+							"key": "optionID",
+							"value": null
+						}
+					]
+				},
+				"description": "An API which adds question answers"
+			},
+			"response": [
+				{
+					"name": "doanswer",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/doanswer/0000/Q0/sCWI/2",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"doanswer",
+								"0000",
+								"Q0",
+								"sCWI",
+								"2"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "18"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"12-wjAPGIDdDOh89e/YB0UTbyCGPDw\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:32:40 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"DONE\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getquestionanswers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9103/intelliq_api/getquestionanswers/:questionnaireID/:questionID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9103",
+					"path": [
+						"intelliq_api",
+						"getquestionanswers",
+						":questionnaireID",
+						":questionID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": null
+						},
+						{
+							"key": "questionID",
+							"value": null
+						}
+					]
+				},
+				"description": "API that returns question answers"
+			},
+			"response": [
+				{
+					"name": "getquestionanswers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIzODU3LCJleHAiOjE2NzY3Mjc0NTd9.1t-n7S4IBdbnt2KzJeDgKrO4qWStGERjlySKIudIcWg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/getquestionanswers/0000/Q0",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"getquestionanswers",
+								"0000",
+								"Q0"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-0rd3/ybPvymK0mdMjU675aMKljY\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:37:57 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"0000\",\n    \"questionID\": \"Q0\",\n    \"answers\": [\n        {\n            \"session\": \"sCWI\",\n            \"ans\": \"2\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "getquestionanswers",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIzODU3LCJleHAiOjE2NzY3Mjc0NTd9.1t-n7S4IBdbnt2KzJeDgKrO4qWStGERjlySKIudIcWg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/getquestionanswers/0000/Q1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"getquestionanswers",
+								"0000",
+								"Q1"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "85"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"55-j+tJvywalXayscu7FQ5D3QnTEZo\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:38:18 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"0000\",\n    \"questionID\": \"Q1\",\n    \"answers\": [\n        {\n            \"session\": \"sCWI\",\n            \"ans\": \"1\"\n        }\n    ]\n}"
+				}
+			]
+		},
+		{
+			"name": "userSession",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9103/intelliq_api/userSession",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9103",
+					"path": [
+						"intelliq_api",
+						"userSession"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "token generated",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\",\n     \"Q_id\": \"0000\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/userSession",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"userSession"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "16"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"10-+eTE2BATOajPU92mkPma1abkecg\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:30:12 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"token\": \"sCWI\"\n}"
+				}
+			]
+		},
+		{
+			"name": "getsessionanswers",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9103/intelliq_api/getsessionanswers/:questionnaireID/:session",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9103",
+					"path": [
+						"intelliq_api",
+						"getsessionanswers",
+						":questionnaireID",
+						":session"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": null
+						},
+						{
+							"key": "session",
+							"value": null
+						}
+					]
+				},
+				"description": "API that returns session answers"
+			},
+			"response": [
+				{
+					"name": "Data returned",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIzODU3LCJleHAiOjE2NzY3Mjc0NTd9.1t-n7S4IBdbnt2KzJeDgKrO4qWStGERjlySKIudIcWg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/getsessionanswers/0000/sCWI",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"getsessionanswers",
+								"0000",
+								"sCWI"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "124"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"7c-zNqEKrFIx6jJr3cwpPq6b0uD4YM\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:39:25 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"0000\",\n    \"session\": \"sCWI\",\n    \"answers\": [\n        {\n            \"qID\": \"Q0\",\n            \"ans\": \"2\"\n        },\n        {\n            \"qID\": \"Q1\",\n            \"ans\": \"1\"\n        },\n        {\n            \"qID\": \"Q2\",\n            \"ans\": \"2\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "No data",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIzODU3LCJleHAiOjE2NzY3Mjc0NTd9.1t-n7S4IBdbnt2KzJeDgKrO4qWStGERjlySKIudIcWg\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/getsessionanswers/0000/qfve",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"getsessionanswers",
+								"0000",
+								"qfve"
+							]
+						}
+					},
+					"status": "Payment Required",
+					"code": 402,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-vdmP2/JDEKeq43I2lhIzKZmXw7M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:41:35 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No data\"\n}"
+				}
+			]
+		},
+		{
+			"name": "questionnaire",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:9103/intelliq_api/questionnaire/:questionnaireID",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "9103",
+					"path": [
+						"intelliq_api",
+						"questionnaire",
+						":questionnaireID"
+					],
+					"variable": [
+						{
+							"key": "questionnaireID",
+							"value": null
+						}
+					]
+				},
+				"description": "API that returns all questions and options for a given questionnaire"
+			},
+			"response": [
+				{
+					"name": "questionnaire exists",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/questionnaire/0000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"questionnaire",
+								"0000"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "1191"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"4a7-346XdhN1K6aUmN7HTkvEiqNl4s4\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:24:34 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"questionnaireID\": \"0000\",\n    \"questionnaireTitle\": \"MY QUESTIONNAIRE\",\n    \"keywords\": \"A DESCRIPTION\",\n    \"questions\": [\n        {\n            \"qID\": \"Q0\",\n            \"qtext\": \"Ποια είναι η ηλικία σας;\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q1\",\n            \"qtext\": \"Ποιο είναι το αγαπημένο σας χρώμα\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q2\",\n            \"qtext\": \"Ασχολείστε με το ποδόσφαιρο;\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q3\",\n            \"qtext\": \"Τι ομάδα είστε\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q4\",\n            \"qtext\": \"Έχετε ζήσει σε νησί;\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q5\",\n            \"qtext\": \"Είστε χειμερινός κολυμβητής\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q6\",\n            \"qtext\": \"Ποια η σχέση σας με το θαλάσιο σκι;\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q7\",\n            \"qtext\": \"Κάνετε χειμερινό σκι;\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q8\",\n            \"qtext\": \"Συμφωνείτε να αλλάζει η ώρα κάθε χρόνο;\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        },\n        {\n            \"qID\": \"Q9\",\n            \"qtext\": \"Προτιμάτε τη χειμερινή ή τη θερινή ώρα;?\",\n            \"type\": \"question\",\n            \"required\": \"1\"\n        }\n    ]\n}"
+				},
+				{
+					"name": "questionnaire does not exist",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/questionnaire/0001",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"questionnaire",
+								"0001"
+							]
+						}
+					},
+					"status": "Payment Required",
+					"code": 402,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "21"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"15-vdmP2/JDEKeq43I2lhIzKZmXw7M\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:25:14 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"No data\"\n}"
+				},
+				{
+					"name": "Authentication failed",
+					"originalRequest": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"token\": \"eyJhbGciOiJIUziIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiYWJ1bGxvY2t0IiwiaWF0IjoxNjc2NzIwMDk3LCJleHAiOjE2NzY3MjM2OTd9.crZhqI08HbKWJThmJYEpRG8v4XpwGsuH6bMR6SdeDNE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9103/intelliq_api/questionnaire/0000",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9103",
+							"path": [
+								"intelliq_api",
+								"questionnaire",
+								"0000"
+							]
+						}
+					},
+					"status": "Unauthorized",
+					"code": 401,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Access-Control-Allow-Origin",
+							"value": "*"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "35"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"23-DVMQ546iZrEXhC6RbqZME5F/Z+0\""
+						},
+						{
+							"key": "Date",
+							"value": "Sat, 18 Feb 2023 12:25:54 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"message\": \"Authentication failed\"\n}"
+				}
+			]
+		}
+	]
+}
